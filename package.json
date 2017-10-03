@@ -1,0 +1,50 @@
+{
+  "name": "async-factory-worker",
+  "version": "0.0.0",
+  "description": "Asyncronously construct arbitrary C++ objects and classes even without a public copy constructor",
+  "author": "Michael Ira Krufky <mkrufky@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mkrufky/node-async-factory-worker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkrufky/node-async-factory-worker/issues"
+  },
+  "keywords": [
+    "copy",
+    "construct",
+    "v8",
+    "node",
+    "nan",
+    "async",
+    "factory",
+    "worker",
+    "native",
+    "addon",
+    "node",
+    "js",
+    "nodejs",
+    "node.js",
+    "javascript",
+    "c",
+    "cc",
+    "cpp",
+    "c++",
+    "plus",
+    "compat"
+  ],
+  "main": "include_dirs.js",
+  "scripts": {
+    "test": "tap --gc test/js/*-test.js",
+    "rebuild-tests": "node-gyp rebuild --msvs_version=2013 --directory test"
+  },
+  "dependencies": {
+    "nan": "^2.8.0"
+  },
+  "devDependencies": {
+    "bindings": "~1.2.1",
+    "node-gyp": "~3.6.2",
+    "tap": "~0.7.1"
+  }
+}
