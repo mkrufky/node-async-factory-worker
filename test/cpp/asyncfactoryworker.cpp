@@ -24,7 +24,7 @@ class Number {
   int n;
 };
 
-class FactoryWorker : public AsyncFactoryWorker<Number, Number> {
+class FactoryWorker : public AsyncFactoryWorker<Number, int> {
  public:
   FactoryWorker(
       Callback *callback
@@ -39,7 +39,7 @@ class FactoryWorker : public AsyncFactoryWorker<Number, Number> {
 
   void Execute (const AsyncFactoryWorker::ExecutionProgress& progress) {
     for (int i = 0; i < iters; ++i) {
-      progress.Construct(Number(i));
+      progress.Construct(i);
     }
   }
 
