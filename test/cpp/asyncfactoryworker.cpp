@@ -11,7 +11,20 @@
 using namespace Nan;  // NOLINT(build/namespaces)
 using namespace Krufky;  // NOLINT(build/namespaces)
 
-class FactoryWorker : public AsyncFactoryWorker<int, int> {
+class Number {
+ public:
+  explicit Number(int n)
+  : n(n) {}
+
+  ~Number() {}
+
+  int get() const { return n; }
+
+ private:
+  int n;
+};
+
+class FactoryWorker : public AsyncFactoryWorker<Number, Number> {
  public:
   FactoryWorker(
       Callback *callback
@@ -26,15 +39,15 @@ class FactoryWorker : public AsyncFactoryWorker<int, int> {
 
   void Execute (const AsyncFactoryWorker::ExecutionProgress& progress) {
     for (int i = 0; i < iters; ++i) {
-      progress.Construct(i);
+      progress.Construct(Number(i));
     }
   }
 
-  void HandleProgressCallback(const int *data, size_t count) {
+  void HandleProgressCallback(const Number *data, size_t count) {
     HandleScope scope;
 
     v8::Local<v8::Value> argv[] = {
-        New<v8::Integer>(*reinterpret_cast<int*>(const_cast<int*>(data)))
+        New<v8::Integer>(data->get())
     };
     progress->Call(1, argv, async_resource);
   }
