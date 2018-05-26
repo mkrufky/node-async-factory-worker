@@ -37,7 +37,7 @@
   "main": "include_dirs.js",
   "scripts": {
     "test": "tap --gc test/js/*-test.js",
-    "rebuild-tests": "node-gyp rebuild --msvs_version=2013 --directory test"
+    "rebuild-tests": "node-gyp rebuild --msvs_version=2015 --directory test"
   },
   "dependencies": {
     "nan": "^2.10.0"
