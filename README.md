@@ -5,7 +5,7 @@ Asyncronously construct arbitrary C++ objects and classes even without a public 
 [![NPM](https://nodei.co/npm/async-factory-worker.png?downloads=true&downloadRank=true)](https://nodei.co/npm/async-factory-worker/)
 
 [![Build Status](https://api.travis-ci.org/mkrufky/node-async-factory-worker.svg?branch=master)](http://travis-ci.org/mkrufky/node-async-factory-worker)
-[![Build status](https://ci.appveyor.com/api/projects/status/p5cgmixxpftd8hxa?svg=true)](https://ci.appveyor.com/project/mkrufky/node-async-factory-worker)
+[![Build status](https://ci.appveyor.com/api/projects/status/l89n43kb4cdugnm5/branch/master?svg=true)](https://ci.appveyor.com/project/mkrufky/node-async-factory-worker/branch/master)
 
 async-factory-worker is a header package for building c++ native addons for node.js that is meant to complement **[nan](https://github.com/nodejs/nan)**
 
