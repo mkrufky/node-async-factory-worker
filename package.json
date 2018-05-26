@@ -1,6 +1,6 @@
 {
   "name": "async-factory-worker",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Asyncronously construct arbitrary C++ objects and classes even without a public copy constructor",
   "author": "Michael Ira Krufky <mkrufky@gmail.com>",
   "license": "MIT",
