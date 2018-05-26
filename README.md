@@ -37,14 +37,14 @@ This works like a `-I<path-to-async-factory-worker>` when compiling your addon.
 
 `AsyncFactoryWorker` is an _abstract_ class that you can subclass to have much of the annoying asynchronous queuing and handling taken care of for you. It can even store arbitrary V8 objects for you and have them persist while the asynchronous work is in progress.
 
-This class internally handles the details of creating an [`AsyncResource`][AsyncResource], and running the callback in the
+This class internally handles the details of creating an [`AsyncResource`](https://github.com/nodejs/nan/tree/master/doc/node_misc.md#AsyncResource), and running the callback in the
 correct async context. To be able to identify the async resources created by this class in async-hooks, provide a
 `resource_name` to the constructor. It is recommended that the module name be used as a prefix to the `resource_name` to avoid
-collisions in the names. For more details see [`AsyncResource`][AsyncResource] documentation.  The `resource_name` needs to stay valid for the lifetime of the worker instance.
+collisions in the names. For more details see [`AsyncResource`](https://github.com/nodejs/nan/tree/master/doc/node_misc.md#AsyncResource) documentation.  The `resource_name` needs to stay valid for the lifetime of the worker instance.
 
-`AsyncFactoryWorker` is an _abstract_ class template that extends `Nan::AsyncWorker` and adds additional progress reporting callbacks that can be used during the asynchronous work execution to provide progress data back to JavaScript.
+`AsyncFactoryWorker` is an _abstract_ class template that extends [`Nan::AsyncWorker`](https://github.com/nodejs/nan/blob/master/doc/asyncworker.md#api_nan_async_worker) and adds additional progress reporting callbacks that can be used during the asynchronous work execution to provide progress data back to JavaScript.
 
-`AsyncFactoryWorker` behaves exactly the same as `Nan::AsyncProgressQueueWorker`, except `AsyncFactoryWorker` avoids the copy.  Data is constructed once and delivered to the receiving thread.  Just as `Nan::AsyncProgressQueueWorker`, all events are queued and delivered to the main thread.
+`AsyncFactoryWorker` behaves exactly the same as [`Nan::AsyncProgressQueueWorker`](https://github.com/nodejs/nan/blob/master/doc/asyncworker.md#api_nan_async_progress_queue_worker), except `AsyncFactoryWorker` avoids the copy.  Data is constructed once and delivered to the receiving thread.  Just as [`Nan::AsyncProgressQueueWorker`](https://github.com/nodejs/nan/blob/master/doc/asyncworker.md#api_nan_async_progress_queue_worker), all events are queued and delivered to the main thread.
 
 Definition:
 
@@ -71,7 +71,7 @@ class AsyncFactoryWorker<T> : public AsyncWorker {
 };
 ```
 
-This works just like the `Nan::AsyncProgressQueueWorker`, but instead of `std::copy`ing the data, the `progress.Construct` function passes along the object constructor arguments, constructing and delivering the object to the main thread.
+This works just like the [`Nan::AsyncProgressQueueWorker`](https://github.com/nodejs/nan/blob/master/doc/asyncworker.md#api_nan_async_progress_queue_worker), but instead of `std::copy`ing the data, the `progress.Construct` function passes along the object constructor arguments, constructing and delivering the object to the main thread.
 
 It allows us to asyncronously construct C++ objects even if they lack a public copy constructor, although it also does support copy constructors.
 
