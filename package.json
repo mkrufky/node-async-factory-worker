@@ -40,11 +40,12 @@
     "rebuild-tests": "node-gyp rebuild --msvs_version=2013 --directory test"
   },
   "dependencies": {
-    "nan": "^2.8.0"
+    "nan": "^2.10.0"
   },
   "devDependencies": {
     "bindings": "~1.2.1",
     "node-gyp": "~3.6.2",
+    "readable-stream": "^2.1.4",
     "tap": "~0.7.1"
   }
 }
