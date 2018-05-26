@@ -9,7 +9,7 @@
 #include <async_factory_worker.h>
 
 using namespace Nan;  // NOLINT(build/namespaces)
-using namespace Krufky;  // NOLINT(build/namespaces)
+using namespace Mkrufky;  // NOLINT(build/namespaces)
 
 class Number {
  public:

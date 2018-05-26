@@ -16,7 +16,7 @@
 
 namespace Nan {
 
-namespace Krufky {
+namespace Mkrufky {
 
 template<class T, typename... Targs>
 /* abstract */
@@ -24,7 +24,7 @@ class AsyncBareFactoryWorker : public AsyncBareProgressWorkerBase {
  public:
   explicit AsyncBareFactoryWorker(
       Callback *callback_,
-      const char* resource_name = "nan:krufky:AsyncBareFactoryWorker")
+      const char* resource_name = "nan:mkrufky:AsyncBareFactoryWorker")
       : AsyncBareProgressWorkerBase(callback_, resource_name) {
   }
 
@@ -62,7 +62,7 @@ class AsyncFactoryWorker : public AsyncBareFactoryWorker<T, Targs...> {
  public:
   explicit AsyncFactoryWorker(
       Callback *callback_,
-      const char* resource_name = "nan:krufky:AsyncFactoryWorker")
+      const char* resource_name = "nan:mkrufky:AsyncFactoryWorker")
       : AsyncBareFactoryWorker<T, Targs...>(callback_, resource_name) {
     uv_mutex_init(&async_lock);
   }
@@ -123,7 +123,7 @@ class AsyncFactoryWorker : public AsyncBareFactoryWorker<T, Targs...> {
   std::queue<T*> asyncdata_;
 };
 
-}  // namespace Krufky
+}  // namespace Mkrufky
 
 }  // namespace Nan
 

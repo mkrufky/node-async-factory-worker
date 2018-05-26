@@ -9,7 +9,7 @@
 #include <async_factory_worker.h>
 
 using namespace Nan;  // NOLINT(build/namespaces)
-using namespace Krufky;  // NOLINT(build/namespaces)
+using namespace Mkrufky;  // NOLINT(build/namespaces)
 
 // Custom data type: This serves as an example of how external
 // libraries could be hooked in, populate their objects and send them to JS.

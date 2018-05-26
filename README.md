@@ -52,7 +52,7 @@ Definition:
 template<class T, typename... Targs>
 class AsyncFactoryWorker<T, Targs...> : public AsyncWorker {
  public:
-  explicit AsyncFactoryWorker(Callback *callback_, const char* resource_name = "nan:krufky:AsyncFactoryWorker");
+  explicit AsyncFactoryWorker(Callback *callback_, const char* resource_name = "nan:mkrufky:AsyncFactoryWorker");
 
   virtual ~AsyncFactoryWorker();
 
