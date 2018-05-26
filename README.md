@@ -49,10 +49,10 @@ collisions in the names. For more details see [`AsyncResource`](https://github.c
 Definition:
 
 ```c++
-template<class T>
-class AsyncFactoryWorker<T> : public AsyncWorker {
+template<class T, typename... Targs>
+class AsyncFactoryWorker<T, Targs...> : public AsyncWorker {
  public:
-  explicit AsyncFactoryWorker(Callback *callback_, const char* resource_name = "nan:AsyncFactoryWorker");
+  explicit AsyncFactoryWorker(Callback *callback_, const char* resource_name = "nan:krufky:AsyncFactoryWorker");
 
   virtual ~AsyncFactoryWorker();
 
@@ -60,7 +60,7 @@ class AsyncFactoryWorker<T> : public AsyncWorker {
 
   class ExecutionProgress {
    public:
-    void Send(const T* data, size_t count) const;
+    void Construct(Targs... Fargs) const;
   };
 
   virtual void Execute(const ExecutionProgress& progress) = 0;
