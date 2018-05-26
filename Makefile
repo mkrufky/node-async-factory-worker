@@ -2,7 +2,11 @@ TOPLEVEL ?= $(dir $(lastword $(MAKEFILE_LIST)))
 CPPLINT ?= $(TOPLEVEL)/cpplint.py
 PYTHON ?= python
 BUILDTYPE ?= Release
-MODULES = asyncfactoryworker asyncfactoryworkerstream
+
+MODULES = asyncfactoryworker \
+	asyncfactoryworkerstream \
+	asyncfactoryworkervarargs
+
 SOURCES = $(MODULES:%=test/cpp/%.cpp)
 ADDONS = $(MODULES:%=test/build/$(BUILDTYPE)/%.node)
 

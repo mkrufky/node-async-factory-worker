@@ -14,6 +14,10 @@
       , "sources"     : [ "cpp/asyncfactoryworker.cpp" ]
     }
   , {
+        "target_name" : "asyncfactoryworkervarargs"
+      , "sources"     : [ "cpp/asyncfactoryworkervarargs.cpp" ]
+    }
+  , {
         "target_name" : "asyncfactoryworkerstream"
       , "sources"     : [ "cpp/asyncfactoryworkerstream.cpp" ]
     }
